@@ -32,16 +32,14 @@ app = FastAPI()
 
 
 # Criando o decorator de rota do operator get
-@app.get('/all')
-def score_geral():  # Função da rota
-    return result
-
-
-@app.get('/green')
-def score_green():
-    return {'greens': result['GREEN'] + result['GREEN GALE 1'] + result['GREEN GALE 2']}
-
-
-@app.get('/red')
-def score_red():
-    return {'reds': result['RED']}
+@app.get('/score/{tipo}')  # Entrada dinâmica
+def score_geral(tipo: str):  # Função da rota com validação
+    tipo = str.upper(tipo)
+    if tipo == 'ALL':
+        return result
+    elif tipo == 'GREENS':
+        return {'greens': result['GREEN'] + result['GREEN GALE 1'] + result['GREEN GALE 2']}
+    elif tipo == 'REDS':
+        return {'reds': result['RED']}
+    else:
+        return {'Error': "Tipo inválido! Tente 'all', 'greens' ou 'reds'"}
