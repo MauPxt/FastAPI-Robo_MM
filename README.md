@@ -17,7 +17,7 @@ FastAPI
 
 MySql
 
-# Instruções de uso:
+# Instruções de instalação:
 
 ```sh
 1 - Realize o download dos arquivos. Você pode fazer isso da seguinte forma:
@@ -30,3 +30,18 @@ MySql
 6 - Iniciar o uvicorn inserindo o comando no terminal "$ uvicorn main:app --reload":
 7 - Com o servidor local criado, já é possível utilizar a API
 ```
+
+# Instruções de uso:
+
+Após a instalação e execução do código, para utilizar a API faça as seguintes requisições
+
+- Acesse o link http://127.0.0.1:8000/score/all para obter todos os resultados
+- Acesse o link http://127.0.0.1:8000/score/greens para obter os resultados de green
+- Acesse o link http://127.0.0.1:8000/score/reds para obter os resultados de red
+
+<br>
+
+Extra:
+
+- Acesse o link http://127.0.0.1:8000/score/docs para acessar a documentação
+- Acesse o link http://127.0.0.1:8000/score/redoc para acessar outro tipo de documentação
